@@ -42,20 +42,17 @@ export default {
 
       Axios.get(url+'/register',{
         params:this.newUser
-      }).then(function
-      (resx){
-
+      }).then(
+      (resx)=>{
+            
+            //console.log(resx)
+            if (resx.data.state == "success"){
+              this.$message(resx.data.message)
+            }
       })
     }
-  },
-  data() {
-    return {
-      newUser: {
-        username: "",
-        password: "",
-      },
-    };
-  },
+  }
+  
 };
 </script>
 
